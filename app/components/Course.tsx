@@ -9,7 +9,7 @@ export default function Course(){
                         <img src="/img/html.svg" alt="" />
                         <div>
                             <h4>CURSO DE HTML</h4>
-                            <p className="mb-4">O Curso de html é oferecido...</p>
+                            <p className="mb-4">O Curso de html é oferecido ....</p>
                         </div>
                     </a>
                 </div>
