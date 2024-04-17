@@ -2,7 +2,7 @@
 export default function Course(){
     return(
         <><div className="font-bold m-4">
-            <h3>Conheça nossos <span class="text-[#00e77f]"> CURSOS </span></h3>
+            <h3>Conheça nossos <span className="text-[#00e77f]"> CURSOS </span></h3>
         </div><div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
                 <div className="bg-[#4d4d4d] rounded-md lg:rounded-lg">
                     <a href="">
