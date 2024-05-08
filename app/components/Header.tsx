@@ -7,7 +7,7 @@ export default function  Header(){
           <a href="#">Home</a>
           <a href="#">Curso</a>
           <a href="#">Contato</a>
-          <a href="#">login</a>
+          <a href="/admin">login</a>
         </nav>
       </div>
     )
