@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { BookAIcon, Home, PersonStanding } from "lucide-react";
+import { BookAIcon, Folder, Home, PersonStanding, User, User2Icon } from "lucide-react";
 
 
 export default function Aside({ className }: any) {
@@ -17,10 +17,17 @@ export default function Aside({ className }: any) {
                     </Button>
                 </a>
 
-                <a href="/admin/studant">
+                <a href="/admin/student">
                     <Button variant="ghost">
-                        <PersonStanding className="mr-2" />
+                        <User2Icon className="mr-2" />
                         Estudante
+                    </Button>
+                </a>
+
+                <a href="/admin/course">
+                    <Button variant="ghost">
+                        <Folder className="mr-2" />
+                        Curso
                     </Button>
                 </a>
 
