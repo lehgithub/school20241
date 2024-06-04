@@ -24,7 +24,7 @@ export default function Aside({ className }: any) {
                     </Button>
                 </a>
 
-                <a href="/admin/course">
+                <a href="/admin/courses">
                     <Button variant="ghost">
                         <Folder className="mr-2" />
                         Curso
