@@ -15,7 +15,7 @@ import { revalidatePath } from "next/cache";
 interface ICourses {
   id:number,
   name:string,
-  description:string
+  
 }
 export default async function ListCourses() {
   const courses = await list()
@@ -32,17 +32,14 @@ export default async function ListCourses() {
       <TableHeader>
         <TableRow>
           <TableHead className="w-[100px]">ID</TableHead>
-          <TableHead>Nome</TableHead>
-          <TableHead>Descrição</TableHead>
+          <TableHead>Nome</TableHead>          
         </TableRow>
       </TableHeader>
       <TableBody>
         {courses.map((item:ICourses) => (
           <TableRow key={item.id}>
             <TableCell className="font-medium">{item.id}</TableCell>
-            <TableCell>{item.name}</TableCell>
-            <TableCell>{item.description}</TableCell>
-
+            <TableCell>{item.name}</TableCell>            
           </TableRow>
         ))}
       </TableBody>

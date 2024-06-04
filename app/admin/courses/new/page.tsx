@@ -21,10 +21,7 @@ const FormSchema = z.object({
     name: z.string().min(2, {
         message: "Nome precisa tem no mínimo 2 caracteres."
     }),
-
-    description: z.string().min(2, {
-        message: "Descrição precisa tem no mínimo 2 caracteres."
-    }),
+  
 
 })
 
@@ -33,7 +30,7 @@ export default function SaveCourses() {
         resolver: zodResolver(FormSchema),
         defaultValues: {
             name: "HTML",
-            description: "O curso de HTML é oferecido...",
+            
         },
     })
 
@@ -68,20 +65,7 @@ export default function SaveCourses() {
                     )}
                 />
 
-                <FormField
-                    control={form.control}
-                    name="description"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Descrição</FormLabel>
-                            <FormControl>
-                                <Input placeholder="Digite a descrição do curso" {...field} />
-                            </FormControl>
-
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
+                
                 <Button type="submit">Submit</Button>
             </form>
         </Form>
