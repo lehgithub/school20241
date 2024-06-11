@@ -40,7 +40,7 @@ export default function SaveStudent() {
             headers:{'Content-Type':'application/json'},
             body: JSON.stringify(student)
         }
-        const response = await fetch("https://server20241.vercel.app/students",requestOption)
+        const response = await fetch("https://server20241-liart.vercel.app/students",requestOption)
         form.reset();
         alert("Estudante Cadastrado com Sucesso!")
 
