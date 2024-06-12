@@ -25,24 +25,26 @@ const FormSchema = z.object({
     email: z.string().email({ message: "Digite o email correto" }),
 })
 
-export default function SaveStudent() {
+export default function SaveTeacher() {
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
         defaultValues: {
-            name: "Le",
-            email: "leh.b@hotmail.com",
+            name: "Bianchini",
+            email: "bianchini@hotmail.com",
         },
     })
 
-    async function onSubmit(student: z.infer<typeof FormSchema>) {
+    async function onSubmit(teacher: z.infer<typeof FormSchema>) {
+        console.log(JSON.stringify(teacher))
         const requestOption= {
             method: "POST",
             headers:{'Content-Type':'application/json'},
-            body: JSON.stringify(student)
+            body: JSON.stringify(teacher)
         }
-        const response = await fetch("https://server20241-liart.vercel.app/students",requestOption)
+        const response = await fetch("https://server20241-liart.vercel.app/teachers", requestOption)
+        const teacher1 = await response.json();
         form.reset();
-        alert("Estudante Cadastrado com Sucesso!")
+        alert("Professor Cadastrado com Sucesso!")
 
 
     }
@@ -57,7 +59,7 @@ export default function SaveStudent() {
                         <FormItem>
                             <FormLabel>Nome</FormLabel>
                             <FormControl>
-                                <Input placeholder="Digite nome do Estudante" {...field} />
+                                <Input placeholder="Digite nome do Professor" {...field} />
                             </FormControl>
 
                             <FormMessage />
@@ -72,7 +74,7 @@ export default function SaveStudent() {
                         <FormItem>
                             <FormLabel>email</FormLabel>
                             <FormControl>
-                                <Input placeholder="Digite o email do Estudante" {...field} />
+                                <Input placeholder="Digite o email do Professor" {...field} />
                             </FormControl>
 
                             <FormMessage />
@@ -84,3 +86,4 @@ export default function SaveStudent() {
         </Form>
     )
 }
+    
