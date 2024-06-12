@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import {
   Table,
   TableBody,
@@ -9,6 +10,7 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { revalidatePath } from "next/cache";
+import { Form } from "react-hook-form";
 
 
 
@@ -26,6 +28,12 @@ export default async function ListStudent() {
 
   }
 
+  async function deleteStudent(formData: FormData){
+    "use server"
+    const id =formData.get("id") as string;
+    const response = await fetch ("https://server20241-liart.vercel.app/students/" +id, {method: 'DELETE'})
+  }
+
   return (
     <Table>
       <TableCaption>Lista de Estudantes</TableCaption>
@@ -34,6 +42,7 @@ export default async function ListStudent() {
           <TableHead className="w-[100px]">ID</TableHead>
           <TableHead>Nome</TableHead>
           <TableHead>Email</TableHead>
+          <TableHead>Ação</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -42,6 +51,15 @@ export default async function ListStudent() {
             <TableCell className="font-medium">{item.id}</TableCell>
             <TableCell>{item.name}</TableCell>
             <TableCell>{item.email}</TableCell>
+            <TableCell> 
+              <form>
+              <input type="text" name="id"hidden value={item.id} />
+              <Button formAction={deleteStudent} variant="destructive">X</Button>
+              </form>
+              
+              
+            </TableCell>
+            
 
           </TableRow>
         ))}

@@ -40,6 +40,7 @@ export default function SaveCourses() {
             headers:{'Content-Type':'application/json'},
             body: JSON.stringify(courses)
         }
+        console.log(JSON.stringify(courses))
         const response = await fetch("https://server20241-liart.vercel.app/courses",requestOption)
         form.reset();
         alert("Curso Cadastrado com Sucesso!")
