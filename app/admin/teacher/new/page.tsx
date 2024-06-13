@@ -44,7 +44,7 @@ export default function SaveTeacher() {
         const response = await fetch("https://server20241-liart.vercel.app/teachers", requestOption)
         const teacher1 = await response.json();
         form.reset();
-        alert("Professor Cadastrado com Sucesso!")
+        alert("Cadastrado com Sucesso!")
 
 
     }
